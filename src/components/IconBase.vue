@@ -1,22 +1,17 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg"
-    width="80%"
-    height="100%"
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
     :viewBox="view_box"
     :aria-labelledby="iconName"
     role="presentation"
   >
-    <title
-      :id="iconName"
-      lang="en"
-    >{{ iconName }}</title>
+    <title :id="iconName" lang="en">{{ iconName }}</title>
     <g :fill="iconColor">
       <slot />
     </g>
   </svg>
 </template>
 <script>
-
 export default {
   name: 'IconBase',
   props: {
@@ -37,10 +32,10 @@ export default {
       default: 'currentColor'
     }
   },
-  setup(){
-    // const view_box = '0 0 ' + props.width + ' ' + props.height 
+  setup() {
+    // const view_box = '0 0 ' + props.width + ' ' + props.height
     const view_box = '0 0 1000 600'
-    return { view_box };
+    return { view_box }
   }
   // methods:
 }
@@ -49,7 +44,5 @@ export default {
 <style scoped>
 svg {
   display: inline-block;
-  vertical-align: baseline;
-  margin-bottom: -2px; /* yes, I'm that particular about formatting */
 }
 </style>

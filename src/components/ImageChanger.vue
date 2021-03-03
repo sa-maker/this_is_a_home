@@ -1,27 +1,41 @@
 <template>
-  <div 
-    class="app_container" 
-    @click="clicked()"
+  <div
+    @mouseenter="handelEnter()"
+    @mouseleave="handelExit()"
+    @mousedown="handelDown()"
+    @mouseup="handelUp()"
+    class="app_container"
   >
-    <icon-base v-if="state===0" icon-name="this is a HOME" :width="800" :height="400"
+    <icon-base
+      v-if="state === 0"
+      icon-name="this is a HOME"
+      :width="800"
+      :height="400"
       ><stet
     /></icon-base>
-    <icon-base v-if="state===1" icon-name="this is my HOME" :width="800" :height="400"
+    <icon-base
+      v-if="state === 1"
+      icon-name="this is my HOME"
+      :width="800"
+      :height="400"
       ><hover
     /></icon-base>
-    <icon-base v-if="state===2" icon-name="I'm going HOME" :width="800" :height="400"
+    <icon-base
+      v-if="state === 2"
+      icon-name="I'm going HOME"
+      :width="800"
+      :height="400"
       ><click
     /></icon-base>
-    <button v-html="'Hover'" />
   </div>
 </template>
 
 <script>
-import { ref } from "vue"
-import IconBase from "./IconBase.vue"
-import stet from "./icons/stet.vue"
-import hover from "./icons/hover.vue"
-import click from "./icons/click.vue"
+import { ref } from 'vue'
+import IconBase from './IconBase.vue'
+import stet from './icons/stet.vue'
+import hover from './icons/hover.vue'
+import click from './icons/click.vue'
 
 export default {
   name: 'ImageChanger',
@@ -33,25 +47,40 @@ export default {
   },
   setup() {
     var state = ref(0)
-    
-    function enter(){
-      state = 1  
+    var down = false
+
+    function handelEnter() {
+      console.log('handelEnter', state)
+      if (!down) {
+        state.value = 1
+      }
     }
-    function exit(){
-      state = 0  
+    function handelExit() {
+      console.log('handelExit', state)
+      state.value = 0
     }
-    function clicked(){
-      state = 2  
+    function handelDown() {
+      console.log('handelDown', state)
+      down = true
+      state.value = 2
     }
-    return { state, enter, exit, clicked }
+    function handelUp() {
+      console.log('handelUp', state)
+      down = false
+      state.value = 1
+    }
+    return { state, handelEnter, handelExit, handelDown, handelUp }
   }
 }
-
 </script>
 
 <style>
 .app_container {
-  max-width: 800px;
+  cursor: pointer;
+  max-width: 600px;
   background-color: #fef6d2;
+  margin: 0px auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 </style>

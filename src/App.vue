@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import ImageChanger from "./components/ImageChanger.vue"
+import ImageChanger from './components/ImageChanger.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     ImageChanger
   }
@@ -14,10 +14,11 @@ export default {
 </script>
 
 <style>
-.app {
+#app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-color: #fef6d2;
+  width: 100%;
 }
 </style>

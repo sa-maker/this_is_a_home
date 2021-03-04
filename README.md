@@ -1,24 +1,9 @@
 # this_is_a_home
 
-## Project setup
-```
-npm install
-```
+## Introduction
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+An art project that I used to learn how to setup a basic Vue 3 project. There will be a more indepth descussion to follow about what is happening here.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Demo
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+You can <a href="https://sa-maker.github.io/this_is_a_house/index.html">view the demo here</a>

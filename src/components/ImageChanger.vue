@@ -50,22 +50,18 @@ export default {
     var down = false
 
     function handelEnter() {
-      console.log('handelEnter', state)
       if (!down) {
         state.value = 1
       }
     }
     function handelExit() {
-      console.log('handelExit', state)
       state.value = 0
     }
     function handelDown() {
-      console.log('handelDown', state)
       down = true
       state.value = 2
     }
     function handelUp() {
-      console.log('handelUp', state)
       down = false
       state.value = 1
     }

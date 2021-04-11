@@ -1,32 +1,35 @@
 <template>
   <div
+    class="app_container"
     @mouseenter="handelEnter()"
     @mouseleave="handelExit()"
     @mousedown="handelDown()"
     @mouseup="handelUp()"
-    class="app_container"
   >
     <icon-base
       v-if="state === 0"
       icon-name="this is a HOME"
       :width="800"
       :height="400"
-      ><stet
-    /></icon-base>
+    >
+      <stet />
+    </icon-base>
     <icon-base
       v-if="state === 1"
       icon-name="this is my HOME"
       :width="800"
       :height="400"
-      ><hover
-    /></icon-base>
+    >
+      <hover />
+    </icon-base>
     <icon-base
       v-if="state === 2"
       icon-name="I'm going HOME"
       :width="800"
       :height="400"
-      ><click
-    /></icon-base>
+    >
+      <click />
+    </icon-base>
   </div>
 </template>
 
